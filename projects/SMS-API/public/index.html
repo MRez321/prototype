@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS API</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <nav id="main-nav">
+        <button id="login-btn">
+            <a href="">Login</a>
+        </button>
+        <Button id="loggedin">
+            <img src="https://1.gravatar.com/avatar/2f28f3949c024422a8ffacc4b1de860a" alt="avatar" class="avatar">
+            
+            <svg viewBox="0 0 11.64 5.82" height="6px" fill="#666" aria-hidden="true"><g id="6a308a62-c62e-4b78-87b6-759dd1ef54e5"><polygon points="10 0 5 5 0 0 10 0"></polygon></g></svg>
+        </Button>
+    </nav>
+
+
+    <section class="sector">
+
+        <div class="form-container">
+            
+            <div class="form-header">
+                <img src="img/pixel-star.png" alt="pixelstar">
+                <h4>پیکسل استار</h4>
+            </div>
+
+
+            <h4>کد تایید را وارد کنید</h4>
+            <p>کد تایید برای شماره <span>09015867713</span> پیامک شد</p>
+
+            <form action="" id="otp-form">
+
+                <div class="otp-wrapper">
+                    <input type="number" maxlength="1" name="" class="otp-input">
+                    <input type="number" maxlength="1" name="" class="otp-input" disabled>
+                    <input type="number" maxlength="1" name="" class="otp-input" disabled>
+                    <input type="number" maxlength="1" name="" class="otp-input" disabled>
+                    <!-- <input type="number" maxlength="1" name="" class="otp-input" disabled> -->
+                    <!-- <input type="number" maxlength="1" name="" class="otp-input" disabled> -->
+                </div>
+
+                <a href="" class="resend-otp">ارسال مجدد کد تایید</a>
+                
+                <!-- <div class="spinner"></div> -->
+                
+                
+                <span id="countdown"></span>
+                <!-- <div class="otp-cooldown">
+                    <div class="otp-cooldown-bar"></div>
+                </div> -->
+
+                <button type="submit" class="submit-btn">تایید</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <div class="form-header">
+                <img src="img/pixel-star.png" alt="pixelstar">
+                <h4>پیکسل استار</h4>
+            </div>
+
+            <p class="form-title">
+                ورود   |   ثبت نام
+            </p>
+
+            <form action="/payamak" method="POST" id="login-form">
+                <label for="tel">
+                    لطفا شماره موبایل خود را وارد کنید
+                </label>
+                <input 
+                    type="tel" 
+                    name="tel" 
+                    id="tel" 
+                    required=""
+                    autocomplete="tel" 
+                    placeholder="شماره تلفن" 
+                    title="لطفا شماره تماس خود را وارد کنید"
+                >
+
+                <button type="submit" class="submit-btn">ورود</button>
+            </form>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+        <div class="profile-container"></div>
+    </section>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/gravatar.js"></script>
+
+</body>
+</html>

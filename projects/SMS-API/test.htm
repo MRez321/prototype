@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .otp-inputs {
+            display: flex;
+            gap: 10px;
+        }
+        .otp-inputs input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .verify-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-container">
+        <h2>Verify</h2>
+        <p>Your code was sent to you via SMS</p>
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" id="otp1">
+            <input type="text" maxlength="1" id="otp2">
+            <input type="text" maxlength="1" id="otp3">
+            <input type="text" maxlength="1" id="otp4">
+            <input type="text" maxlength="1" id="otp5">
+            <input type="text" maxlength="1" id="otp6">
+        </div>
+        <button class="verify-btn" onclick="verifyOTP()">Verify</button>
+        <p>Didn't receive code? <a href="#" onclick="requestOTP()">Request again</a></p>
+    </div>
+
+    <script>
+        // Simulate the OTP received from SMS
+        function simulateOTPReceive() {
+            const otp = "123456"; // Example OTP for simulation
+            fillOTP(otp);
+        }
+
+        // Fill the OTP form with the received code
+        function fillOTP(otp) {
+            const otpArray = otp.split('');
+            for (let i = 0; i < otpArray.length; i++) {
+                document.getElementById(`otp${i + 1}`).value = otpArray[i];
+            }
+        }
+
+        // Request OTP (Simulate API call)
+        function requestOTP() {
+            console.log('Requesting OTP...');
+            setTimeout(simulateOTPReceive, 2000); // Simulate OTP received after 2 seconds
+        }
+
+        // Verify OTP
+        function verifyOTP() {
+            const otp = [];
+            for (let i = 1; i <= 6; i++) {
+                otp.push(document.getElementById(`otp${i}`).value);
+            }
+            const otpCode = otp.join('');
+            console.log(`Verifying OTP: ${otpCode}`);
+            // Here you can add the verification logic (e.g., API call)
+        }
+
+        // Request OTP when the page loads
+        window.onload = requestOTP;
+    </script>
+</body>
+</html>
